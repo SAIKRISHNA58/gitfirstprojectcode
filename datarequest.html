@@ -1,0 +1,277 @@
+<html>
+
+<head>
+    <title>SpielData</title>
+    <meta charset="UTF-8">
+        <meta name="description" content="Simple ideas for enhancing text input interactions" />
+        <meta name="keywords" content="input, text, effect, focus, transition, interaction, inspiration, web design" />
+        <meta name="author" content="Codrops" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" /> 
+    <link href="css/spiel.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/style_common.css" />
+    <link rel="stylesheet" type="text/css" href="css/style1.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <!--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+    <link rel="shortcut icon" href="images/spieldata.png" type="image/x-icon">
+
+</head>
+<style>
+    .input__field--yoko {
+    z-index: 10;
+    width: 100%;
+    background: transparent;
+    color: #f5f5f5;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.input__label--yoko {
+    position: relative;
+    width: 100%;
+    color: #b04b40;
+    text-align: left;
+}
+
+.input__label--yoko::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 4em;
+    background: #c5564a;
+    -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.input__label--yoko::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.25em;
+    background: #ad473c;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.input__label-content--yoko {
+    padding: 0.75em 0;
+}
+
+.input__field--yoko:focus,
+.input--filled .input__field--yoko {
+    opacity: 1;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.input__field--yoko:focus + .input__label--yoko::before,
+.input--filled .input__label--yoko::before {
+    -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+}
+
+.input__field--yoko:focus + .input__label--yoko,
+.input--filled .input__label--yoko {
+    pointer-events: none;
+}
+
+.input__field--yoko:focus + .input__label--yoko::after,
+.input--filled .input__label--yoko::after {
+    -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
+    transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
+}
+
+</style>
+
+<body>
+    <!-- ___________navbar___________   -->
+      <div class="work">
+        <div class="container navbar-fixed-top ">
+            <a class="navbar-brand" href="index.html "><img src="images/spieldata.png" alt="spieldata" style="width: 120px; height:  90px; "></a>
+
+            <nav id="hall">
+                <div class="nav-mobile hunt"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#home" style="border-radius:0px;"><b>Home</b></a>
+                    </li>
+                    <li>
+                        <a href="#whyus" style="border-radius:0px;"><b>Why Us</b></a>
+                    </li>
+                    <li>
+                        <a href="#aboutus" style="border-radius:0px;"><b>About Us</b></a>
+                    </li>
+                    <li>
+                        <a href="#datarequest" style="border-radius:0px;"><b>Data Request</b></a>
+                    </li>
+                    <li>
+                        <a href="buy.html" style="border-radius:0px;"><b>Buy</b></a>
+                    </li>
+                    <li>
+                        <a href="services.html" style="border-radius:0px;"><b>Services</b></a>
+                    </li>
+                    <li>
+                        <a href="#contactus" style="border-radius:0px;"><b>Contact Us</b></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div> 
+
+<section class="content bgcolor-5">
+                <h2>Yoko</h2>
+                <span class="input input--minoru">
+                    <input class="input__field input__field--yoko" type="text" id="input-16" />
+                    <label class="input__label input__label--yoko" for="input-16">
+                        <span class="input__label-content input__label-content--yoko">Street</span>
+                    </label>
+                </span>
+                <span class="input input--minoru">
+                    <input class="input__field input__field--yoko" type="text" id="input-17" />
+                    <label class="input__label input__label--yoko" for="input-17">
+                        <span class="input__label-content input__label-content--yoko">City</span>
+                    </label>
+                </span>
+                <span class="input input--minoru">
+                    <input class="input__field input__field--yoko" type="text" id="input-18" />
+                    <label class="input__label input__label--yoko" for="input-18">
+                        <span class="input__label-content input__label-content--yoko">Region</span>
+                    </label>
+                </span>
+            </section>
+     <!--  <div class="container-fluid">
+        <h2>Data Request</h2>
+                    <div class="row   center-align">
+                      <form onsubmit="alert('jai balayya');">
+                        <div class="col l4"></div>
+                        <div class="col l4 bg_1">
+                        <div class = "row">  
+
+                           <div class = "input-field">  
+                            <input type="text" id="name"  class="active" validate required>
+                            <label>Username:</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field">
+                            <input type="text" id="number"  validate required>
+                            <label>Mobile Number</label>
+                          </div>
+                         </div>
+                          <div class = "row">  
+                           
+                           <div class = "input-field">  
+                              <input  id = "email" type = "email"  
+                                 class = "validate" pattern="[0-9a-zAZÑñ._@-]{10,50}" validate required>  
+                              <label for = "email">Email</label>  
+                           </div>  
+                        </div>  
+                        <div class = "row">  
+                        
+                           <div class = "input-field">  
+                              <input id = "data" type = "text"  
+                                 class = "validate" required="required">  
+                              <label for = "Data Type">Data Type</label>  
+                           </div>  
+                        </div>  
+                        <div class="row">
+                          
+                          <div class="input-field">
+           <textarea type="email" id="textarea" class="materialize-textarea"></textarea>
+           <label class="active" for="textarea">Textarea</label>
+         </div> -->
+         <button class="waves-effect waves-light btn" type="submit" id="submit-button" data-reveal-id="modal1">Submit</button>
+ <!--  <a href="#modal1" type="submit" id="submit-button" data-reveal-id="modal1" class="btn waves-effect">Modal 1</a> -->
+ <!-- <input type="submit" id="submit-button" data-reveal-id="modal1" value="Submit this support request" -->
+                        </div>
+</div>
+
+                      </form>
+                    </div>
+                  </div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+       <script src="js/classie.js"></script>
+    <script>
+        (function($) { // Begin jQuery
+            $(function() { // DOM ready
+                // If a link has a dropdown, add sub menu toggle.
+                $('nav ul li a:not(:only-child)').click(function(e) {
+                    $(this).siblings('.nav-dropdown').toggle();
+                    // Close one dropdown when selecting another
+                    $('.nav-dropdown').not($(this).siblings()).hide();
+                    e.stopPropagation();
+                });
+                // Clicking away from dropdown will remove the dropdown class
+                $('html').click(function() {
+                    $('.nav-dropdown').hide();
+                });
+                // Toggle open and close nav styles on click
+                $('#nav-toggle').click(function() {
+                    $('nav ul').slideToggle();
+                });
+                // Hamburger to X toggle
+                $('#nav-toggle').on('click', function() {
+                    this.classList.toggle('active');
+                });
+            }); // end DOM ready
+        })(jQuery); // end jQuery
+
+    </script>
+    <script>
+            (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
+
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
+
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+        </script>
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </body>
+ </html>
